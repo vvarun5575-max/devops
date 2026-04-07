@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input List Example</title>
+</head>
+<body>
+
+    <h2>Enter Item</h2>
+    
+    <!-- Input box -->
+    <input type="text" id="inputBox" placeholder="Enter something">
+    
+    <!-- Add button -->
+    <button onclick="addItem()">Add to List</button>
+    
+    <!-- Replace button -->
+    <button onclick="replaceList()">Replace List</button>
+
+    <!-- List display -->
+    <ul id="list"></ul>
+
+    <script>
+        function addItem() {
+            let input = document.getElementById("inputBox").value;
+            
+            if (input === "") return;
+
+            let li = document.createElement("li");
+            li.textContent = input;
+
+            document.getElementById("list").appendChild(li);
+
+            document.getElementById("inputBox").value = "";
+        }
+
+        function replaceList() {
+            document.getElementById("list").innerHTML = `
+                <li>New Item 1</li>
+                <li>New Item 2</li>
+                <li>New Item 3</li>
+            `;
+        }
+    </script>
+
+</body>
+</html>

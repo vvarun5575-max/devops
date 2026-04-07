@@ -1,1 +1,30 @@
-<h1>Hello this id from main branch</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input to List</title>
+</head>
+<body>
+
+  <input type="text" id="inputBox" placeholder="Enter item">
+  <button onclick="addItem()">Add</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    function addItem() {
+      const input = document.getElementById("inputBox");
+      const value = input.value.trim();
+
+      if (value !== "") {
+        const li = document.createElement("li");
+        li.textContent = value;
+
+        document.getElementById("list").appendChild(li);
+
+        input.value = ""; // clear input
+      }
+    }
+  </script>
+
+</body>
+</html>

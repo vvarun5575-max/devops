@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <body class="bg -gray-900 text-white p-6" >
+    
+<button onclick="addItem()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
+        Add Item
+    </button>
+    <div id = "container" class="mt -4 p-4 bg-gray-800 rounded">
+        </div>
+        <script>
+            function addItem() {
+                let p= document.createElement("p");
+                p.innerText = "Name: " + ".........";
+                document.getElementById("container").appendChild(p);
+            }
+        </script>
+        <div id = "list" class="mt-4"></div>
+        <script>
+        function addgene() {
+            let value = document.getElementById("Name").value;
+            
+            if (value !== "") {
+                let li = document.createElement("li");
+                li.innerText = value;
+                document.getElementById("list").appendChild(li);
+                document.getElementById("Name").value = "";
+            }
+        }
+        </script>
+        <ul id ="genelist"></ul>
+        <script>
+            function addgene() {
+                let value = document.getElementById("Name").value;
+                
+                if (value !== "") {
+                    alert("enter name");
+                    return;
+                }
+                let li = document.createElement("li");
+                li.innerText = value;
+                document.getElementById("genelist").appendChild(li);
+                document.getElementById("Name").value = "";
+                li.style.color = "red";
+
+            }
+        </script>
+        <ol id="genelist"></ol>
+        <script>
+            function addgene() {
+                let value = document.getElementById("Name").value;
+                
+                if (value !== "") {
+                    alert("enter name");
+                    return;
+                }
+                let li = document.createElement("li");
+                li.innerText = value;
+                document.getElementById("genelist").appendChild(li);
+                document.getElementById("Name").value = "";
+                li.style.color = "blue";
+            }
+        </script>
+    </body>
+</html>
