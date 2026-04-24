@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Input to List</title>
-</head>
-<body>
+<DOCTYPE html>
+  <html>
+    <head>
+      <title> BLAST TOOL</title>
+  </head>
+  <body>
 
-  <input type="text" id="inputBox" placeholder="Enter item">
-  <button onclick="addItem()">Add</button>
+    <h2> blast search</h2>
 
-  <ul id="list"></ul>
+    <for methode="post">
+      <texttarea name="sequences" rows="s" cols="50"></texttarea></for><br><br>
+      <button type ="submit"> RUN BLAST </button>
+    </form>
 
-  <script>
-    function addItem() {
-      const input = document.getElementById("inputBox");
-      const value = input.value.trim();
-
-      if (value !== "") {
-        const li = document.createElement("li");
-        li.textContent = value;
-
-        document.getElementById("list").appendChild(li);
-
-        input.value = ""; // clear input
-      }
-    }
-  </script>
-
-</body>
-</html>
+    <h3> RESULT:</h3>
+    <pre> {{ result }}</pre>
+    
+     
+  </body>
+  </html>
