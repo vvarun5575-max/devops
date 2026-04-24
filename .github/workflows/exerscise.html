@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="input" placeholder="Enter item">
+<button onclick="addItem()">Add</button>
+
+<br><br>
+
+<button onclick="removeFirst()">Remove First</button>
+<button onclick="removeLast()">Remove Last</button>
+<button onclick="removeAll()">Remove All</button>
+<button onclick="removeMatch()">Remove Matching</button>
+
+<ul id="list"></ul>
+<li>gdf</li>
+<li>dg8ch</li>
+<li>jjijiijcjj</li>
+<script>
+
+// ➕ Add item (button click)
+function addItem() {
+    let value = document.getElementById("input").value;
+
+    if (value === "") {
+        alert("Enter something");
+        return;
+    }
+
+    let li = document.createElement("li");
+    li.innerText = value;
+
+    document.getElementById("list").appendChild(li);
+    document.getElementById("input").value = "";
+}
+
+// ❌ Remove first item (button click)
+function removeFirst() {
+    let list = document.getElementById("list");
+
+    if (list.children.length > 0) {
+        list.removeChild(list.children[0]);
+    }
+}
+
+// ❌ Remove last item (button click)
+function removeLast() {
+    let list = document.getElementById("list");
+
+    if (list.children.length > 0) {
+        list.removeChild(list.children[list.children.length - 1]);
+    }
+}
+
+// ❌ Remove all items (button click)
+function removeAll() {
+    document.getElementById("list").innerHTML = "";
+}
+
+// ❌ Remove matching item (button click)
+function removeMatch() {
+    let value = document.getElementById("input").value;
+    let items = document.querySelectorAll("#list li");
+
+    items.forEach(function(item) {
+        if (item.innerText === value) {
+            item.remove();
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
